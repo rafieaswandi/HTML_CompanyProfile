@@ -1,0 +1,418 @@
+@import url(query.css);
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    width: 100%;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    background-color: #3F641F;
+    backdrop-filter: blur(3px);
+    z-index: 1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.navbar img {
+    width: 150px;
+}
+
+/* Menu Styling */
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar nav ul li {
+    list-style: none;
+}
+
+.navbar nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-radius 0.3s ease;
+}
+
+/* Hover Effect */
+.navbar nav ul li a:hover {
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Special Button for PPDB */
+.navbar nav ul li a.ppdb {
+    background-color: #FF5733;
+    color: white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect for PPDB button */
+.navbar nav ul li a.ppdb:hover {
+    background-color: #FF4500;
+    transform: scale(1.05);
+}
+
+/* Menu button styling (for mobile) */
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-btn .bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+}
+
+.hero {
+    background-image: url(Images/tarunarabbani.png);
+    text-align: center;
+    padding: 2rem;
+    height: 659px;
+}
+
+.hero img {
+    margin-top: 152px;
+    width: 127px;
+    height: 127px;
+}
+
+.hero h2 {
+    color: #FFF;
+    font-family: Merriweather;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.profile, .programs, .vision-mission, .pembina, .gallery, .videos, .location {
+    padding: 2rem;
+    text-align: center;
+}
+
+.gallery-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    text-align: center;
+}
+
+.gallery-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    /* position: relative; */
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    transition: transform 0.5s ease;
+}
+
+/* Hover Effect */
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Zoom the image on hover */
+.gallery-item:hover img {
+    transform: scale(1.2);
+}
+
+/* Optional: Overlay for Image */
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Overlay appears on hover */
+.gallery-item:hover::after {
+    opacity: 1;
+}
+
+.profile {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9f9f9;
+}
+
+.profile-container {
+    display: flex;
+    max-width: 1200px;
+    align-items: center;
+}
+
+.profile-image img {
+    width: 349px;
+    height: 376px;
+    border-radius: 15px;
+}
+
+.profile-text {
+    margin-left: 40px;
+}
+
+.profile-text h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-text h2 span {
+    color: #3F641F;
+}
+
+.profile-text p {
+    text-align: left;
+    margin-top: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.programs {
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+
+}
+
+.program-item {
+    background: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease-in-out;
+}
+
+.program-item:hover {
+    filter: invert(1);
+}
+
+.program-item .icon {
+    font-size: 48px; /* Adjust size if actual SVGs are smaller or larger */
+    margin-bottom: 10px;
+}
+
+.program-item p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.vision-mission {
+    padding: 50px;
+    background-color: #3F641F;
+    color: #fff;
+}
+
+.vision-mission-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.vision, .mission {
+    width: 40%;
+}
+
+.vision h2, .mission h2 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.vision p, .mission p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.vision-image {
+    border-radius: 25px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.vision-image img {
+    width: 411px;
+    max-width: 100%;
+    border-radius: 25px;
+}
+
+.divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10%;
+}
+
+.divider svg .star {
+    width: 40px;
+    height: 40px;
+}
+
+.mission p {
+    margin-bottom: 15px;
+}
+
+.pembina-section {
+    background: url('Images/Group 1000015861.png') no-repeat center center/cover;
+    position: relative;
+    padding: 50px 0;
+    text-align: center;
+    color: #333;
+}
+
+.overlay {
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent white overlay */
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 32px;
+    color: #333;
+}
+
+h2 span {
+    color: #3F641F;
+}
+
+.leader-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.leader-info img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.leader-info p {
+    font-size: 16px;
+    color: #333;
+}
+
+.dewan-list h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.dewan-list ol {
+    list-style: decimal inside;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dewan-list li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.dewan-list ul {
+    list-style: disc inside;
+    margin-left: 20px;
+}
+
+.dewan-list ul li {
+    margin-bottom: 5px;
+}
+
+
+.gallery-grid, .video-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.video-item {
+    margin: 1rem;
+    width: calc(33% - 2rem);
+}
+
+footer {
+    background: #3F641F;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
