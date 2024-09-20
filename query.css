@@ -3,6 +3,15 @@
         flex-direction: column;
     }
 
+    .profile-container, .video-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .profile-text p {
+        text-align: center;
+    }
+
     /* Hide the nav links by default on mobile */
     .nav-links {
         display: none;
